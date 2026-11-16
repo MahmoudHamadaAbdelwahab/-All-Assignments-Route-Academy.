@@ -137,6 +137,150 @@ namespace Assignments
 
 			#endregion
 
+			#region Assignments 3
+
+			#region Declare string title = "clean code";. Call title.ToUpper() and store it in a new variable upperTitle. Print both title and upperTitle to show that title did not change
+			//string title = "clean code";
+			//string upperTitle = title.ToUpper();
+			//Console.WriteLine($"Title: {title} , UpperTitle: {upperTitle}");
+			#endregion
+
+			#region Declare Two separate string variables, both set to the literal "Clean Code". Use ReferenceEquals() to check if they point to the same object in memory
+
+			#endregion
+
+			#region Create a StringBuilder, Append() the text "Book List", then Append() " - Updated" onto the sameobject.Print the final result.
+			//StringBuilder strBuild = new StringBuilder();
+			//strBuild.Append("Book List");
+			//strBuild.Append(" - Updated");
+			//Console.WriteLine(strBuild.ToString());
+			#endregion
+
+			#region Using the StringBuilder from the question above, use Replace() to change "Book List" into "Library".Print the result.
+			//strBuild.Replace("Book List", "Library");
+			//Console.WriteLine(strBuild.ToString());
+			#endregion
+
+			#region  Given string title = "Clean Code"; and int pages = 464;, build the sentence "Book: Clean Code,Pages: 464" using the + operator
+			//string title = "Clean Code";
+			//int pages = 464;
+			//Console.WriteLine("Book: " + title + ", Pages: " + pages);
+			#endregion
+
+			#region Build the same sentence as above, but using string interpolation ($"...").
+			//Console.WriteLine($"Book: {title}, Pages: {pages}");
+			#endregion
+
+			#region Build the same sentence again, but using string.Format().
+			//Console.WriteLine(string.Format("Book: {0}, Pages: {1}", title, pages));
+			#endregion
+
+			#region Given int pages = 464;, write an if / else statement that prints "Long Book" if pages is greater than300, otherwise prints "Short Book
+			//int pages = 464;
+			//if(pages > 300)
+			//	Console.WriteLine("Long Book");
+			//else
+			//	Console.WriteLine("Short Book");
+			#endregion
+
+			#region Given int pages = 464; and bool isAvailable = true;, print "You can borrow this book" only if pages isgreater than 300 and isAvailable is true.Use the && operator
+			//bool isAvailable = true;
+			//if(pages > 300 && isAvailable)
+			//	Console.WriteLine("You can borrow this book");
+			#endregion
+
+			#region Given string title = "Refactoring";, write a switch statement that prints "Great choice!" if the title is"Clean Code", "Nice pick!" if it's "Refactoring", and "Never heard of it" for anything else  
+			//string title = "Refactoring";
+			//switch(title)
+			//{
+			//	case "Clean Code":
+			//		Console.WriteLine("Book: Great choice!");
+			//		break;
+			//	case "Refactoring":
+			//		Console.WriteLine("Book: Nice pick!");
+			//		break;
+			//	default:
+			//		Console.WriteLine("Never heard of it");
+			//		break;
+			//}
+			#endregion
+
+			#region  Given int pages = 464;, use the ternary operator to store "Long Book" or "Short Book" into avariable sizeLabel(same rule as question 8: long if pages > 300).
+			//int pages = 464;
+			//string sizeLable = pages > 300 ? "long book" : "short book";
+			//Console.WriteLine(sizeLable);
+
+			#endregion
+
+			#region Given string[] books = { "Clean Code", "The Pragmatic Programmer", "Refactoring" };, use a for loop to print each book with its position number, like 1.Clean Code.
+			//string[] books = { "Clean Code", "The Pragmatic Programmer", "Refactoring" };
+			//for(int i = 0; i < books.Length; i++)
+			//{
+			//	Console.WriteLine($"book {i+1} : {books[i]}");
+			//}
+			#endregion
+
+			#region Using the same books array, use a while loop to print every book title
+			//int counter = 0;
+			//while (counter < books.Length)
+			//{
+			//	Console.WriteLine($"book {counter+1} : {books[counter]}");
+			//	counter++;
+			//}
+			#endregion
+
+			#region Write a do-while loop that prints "Checking book..." exactly 3 times.
+			//int count = 0;
+			//do
+			//{
+			//	Console.WriteLine("Checking book...");
+			//	count++;
+			//}
+			//while (count < 3);
+			#endregion
+
+			#region Using the same books array, use a foreach loop to print every book title.
+			//foreach (string book in books)
+			//{
+			//	Console.WriteLine($"book : {book}");
+			//}
+
+			#endregion
+
+			#region Using the same books array, loop through it and print each title, but stop completely (break) onceyou reach "Refactoring"
+			//for (int i = 0; i < books.Length; i++)
+			//{ 
+			//	if(books[i] == "Refactoring")
+			//		break;
+
+			//	Console.WriteLine($"book {i + 1} : {books[i]}");
+			//}
+			#endregion
+
+			#region Using the same books array, print every title except "The Pragmatic Programmer" (skip it with continue, don't stop the loop).
+			//for (int i = 0; i < books.Length; i++)
+			//{ 
+			//	if(books[i] == "The Pragmatic Programmer")
+			//		continue;
+
+			//	Console.WriteLine($"book {i + 1} : {books[i]}");
+			//}
+
+			#endregion
+
+			#region Write a method PrintFirstBook() that prints the first book in the books array. If the array is empty, use return to exit the method early instead of printing anything.
+
+			//void PrintFirstBook()
+			//{
+			//	if (books.Length == 0)
+			//		return;
+
+			//	Console.WriteLine(books[0]);
+			//}
+			#endregion
+
+			#endregion
+
 		}
 	}
 }
