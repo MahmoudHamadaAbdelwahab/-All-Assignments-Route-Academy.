@@ -281,6 +281,255 @@ namespace Assignments
 
 			#endregion
 
+			#region Assignments 4
+			using System;
+
+namespace LibraryAssignment
+	{
+		class Program
+		{
+			static void Main(string[] args)
+			{
+				#region Problem 1: One-Dimensional Array
+				/*
+				 * Problem 1:
+				 * Create a one-dimensional array double[] prices with the values 25.5, 40.0, 33.75. 
+				 * Print the second price (index 1).
+				 */
+				Console.WriteLine("--- Problem 1 ---");
+				double[] prices = { 25.5, 40.0, 33.75 };
+				Console.WriteLine("Second price: " + prices[1]);
+				Console.WriteLine();
+				#endregion
+
+				#region Problem 2: Multidimensional Array
+				/*
+				 * Problem 2:
+				 * Create a 2x2 multidimensional array int[,] shelfCopies where shelf 0 has 3, 5 copies 
+				 * and shelf 1 has 1, 4 copies. Print the number of copies on shelf 1, slot 0.
+				 */
+				Console.WriteLine("--- Problem 2 ---");
+				int[,] shelfCopies = {
+				{ 3, 5 }, // Shelf 0
+                { 1, 4 }  // Shelf 1
+            };
+				Console.WriteLine("Copies on shelf 1, slot 0: " + shelfCopies[1, 0]);
+				Console.WriteLine();
+				#endregion
+
+				#region Problem 3: Basic Void Method
+				/*
+				 * Problem 3:
+				 * Write a method called PrintWelcomeMessage that takes no parameters and prints
+				 * "Welcome to the Library!". Call it from Main.
+				 */
+				Console.WriteLine("--- Problem 3 ---");
+				PrintWelcomeMessage();
+				Console.WriteLine();
+				#endregion
+
+				#region Problem 4: Method with a Parameter
+				/*
+				 * Problem 4:
+				 * Write a method PrintBookTitle(string title) that prints "Book title: " + title. 
+				 * Call it with "Clean Code".
+				 */
+				Console.WriteLine("--- Problem 4 ---");
+				PrintBookTitle("Clean Code");
+				Console.WriteLine();
+				#endregion
+
+				#region Problem 5: Pass by Value (Value Type)
+				/*
+				 * Problem 5:
+				 * Write a method AddBonusPages(int pages) that adds 50 to pages. Call it with a variable
+				 * int pages = 400; and print pages afterward. What do you expect to see, and why?
+				 */
+				Console.WriteLine("--- Problem 5 ---");
+				int pages = 400;
+				AddBonusPages(pages);
+				Console.WriteLine("Pages after method call: " + pages);
+				// Explanation: I expect to see 400. Because 'int' is a value type, C# passes a copy 
+				// of the variable to the method. Adding 50 only changes the copy inside the method, 
+				// leaving the original 'pages' variable in Main unchanged.
+				Console.WriteLine();
+				#endregion
+
+				#region Problem 6: Pass by Value (Reference Type)
+				/*
+				 * Problem 6:
+				 * Write a method ApplyDiscount(double[] prices) that subtracts 5 from prices[0]. Call it
+				 * with double[] prices = { 25.5, 40.0 }; and print prices[0] afterward. What do you expect to
+				 * see, and why?
+				 */
+				Console.WriteLine("--- Problem 6 ---");
+				double[] discountPrices = { 25.5, 40.0 };
+				ApplyDiscount(discountPrices);
+				Console.WriteLine("First price after discount: " + discountPrices[0]);
+				// Explanation: I expect to see 20.5. Arrays are reference types, meaning the variable 
+				// holds a memory address pointing to the array. When passed to the method, the method 
+				// accesses and modifies the exact same array in memory.
+				Console.WriteLine();
+				#endregion
+
+				#region Problem 7: Pass by Reference (ref keyword)
+				/*
+				 * Problem 7:
+				 * Rewrite the method from question 5 as AddBonusPagesByRef(ref int pages) using ref.
+				 * Call it and print pages afterward. How is the result different from question 5?
+				 */
+				Console.WriteLine("--- Problem 7 ---");
+				int refPages = 400;
+				AddBonusPagesByRef(ref refPages);
+				Console.WriteLine("Pages after ref method call: " + refPages);
+				// Explanation: The result is now 450 instead of 400. Using the 'ref' keyword forces C# 
+				// to pass a reference to the original variable rather than a copy, so changes inside 
+				// the method directly update the original variable in Main.
+				Console.WriteLine();
+				#endregion
+
+				#region Problem 8: Replacing an Array using ref
+				/*
+				 * Problem 8:
+				 * Write a method ReplaceArray(ref double[] prices) that replaces prices entirely with a
+				 * new array { 10.0, 12.5, 15.0 }. Call it with your prices array and print prices.Length
+				 * afterward.
+				 */
+				Console.WriteLine("--- Problem 8 ---");
+				ReplaceArray(ref discountPrices);
+				Console.WriteLine("New array length: " + discountPrices.Length);
+				Console.WriteLine();
+				#endregion
+
+				#region Problem 9: Output Parameters (out keyword)
+				/*
+				 * Problem 9:
+				 * Write a method bool TryGetPrice(string title, out double price) that returns true and sets
+				 * price to 25.5 if title is "Clean Code", otherwise returns false and sets price to 0. Call it
+				 * and print the price if found.
+				 */
+				Console.WriteLine("--- Problem 9 ---");
+				if (TryGetPrice("Clean Code", out double foundPrice))
+				{
+					Console.WriteLine("Book found! Price: " + foundPrice);
+				}
+				else
+				{
+					Console.WriteLine("Book not found.");
+				}
+				Console.WriteLine();
+				#endregion
+
+				#region Problem 10: Optional Parameters
+				/*
+				 * Problem 10:
+				 * Write a method PrintBookInfo(string title, int pages = 300) where pages is optional. Call
+				 * it once with only a title, and once passing both a title and pages.
+				 */
+				Console.WriteLine("--- Problem 10 ---");
+				PrintBookInfo("The Pragmatic Programmer");
+				PrintBookInfo("Clean Code", 464);
+				Console.WriteLine();
+				#endregion
+
+				#region Problem 11: Named Arguments
+				/*
+				 * Problem 11:
+				 * Using the PrintBookInfo method from the question above, call it by naming the
+				 * parameters, passing pages before title.
+				 */
+				Console.WriteLine("--- Problem 11 ---");
+				PrintBookInfo(pages: 520, title: "Design Patterns");
+				Console.WriteLine();
+				#endregion
+
+				#region Problem 12: Params Keyword
+				/*
+				 * Problem 12:
+				 * Write a method PrintAllTitles(params string[] titles) that prints each title on its own line.
+				 * Call it with three book titles.
+				 */
+				Console.WriteLine("--- Problem 12 ---");
+				PrintAllTitles("Clean Code", "Refactoring", "Head First C#");
+				Console.WriteLine();
+				#endregion
+			}
+
+			// --- Helper Methods ---
+
+			// Method for Problem 3
+			static void PrintWelcomeMessage()
+			{
+				Console.WriteLine("Welcome to the Library!");
+			}
+
+			// Method for Problem 4
+			static void PrintBookTitle(string title)
+			{
+				Console.WriteLine("Book title: " + title);
+			}
+
+			// Method for Problem 5
+			static void AddBonusPages(int pages)
+			{
+				pages = pages + 50;
+			}
+
+			// Method for Problem 6
+			static void ApplyDiscount(double[] prices)
+			{
+				prices[0] = prices[0] - 5;
+			}
+
+			// Method for Problem 7
+			static void AddBonusPagesByRef(ref int pages)
+			{
+				pages = pages + 50;
+			}
+
+			// Method for Problem 8
+			static void ReplaceArray(ref double[] prices)
+			{
+				prices = new double[] { 10.0, 12.5, 15.0 };
+			}
+
+			// Method for Problem 9
+			static bool TryGetPrice(string title, out double price)
+			{
+				if (title == "Clean Code")
+				{
+					price = 25.5;
+					return true;
+				}
+				else
+				{
+					price = 0;
+					return false;
+				}
+			}
+
+			// Method for Problem 10 & 11
+			static void PrintBookInfo(string title, int pages = 300)
+			{
+				Console.WriteLine($"Title: {title}, Pages: {pages}");
+			}
+
+			// Method for Problem 12
+			static void PrintAllTitles(params string[] titles)
+			{
+				foreach (string title in titles)
+				{
+					Console.WriteLine(title);
+				}
+			}
 		}
+	}
+
+
+
+
+
+	#endregion
+}
 	}
 }
