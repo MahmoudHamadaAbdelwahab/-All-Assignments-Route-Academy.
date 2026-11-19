@@ -282,14 +282,7 @@ namespace Assignments
 			#endregion
 
 			#region Assignments 4
-			using System;
-
-namespace LibraryAssignment
-	{
-		class Program
-		{
-			static void Main(string[] args)
-			{
+			
 				#region Problem 1: One-Dimensional Array
 				/*
 				 * Problem 1:
@@ -452,84 +445,78 @@ namespace LibraryAssignment
 				Console.WriteLine("--- Problem 12 ---");
 				PrintAllTitles("Clean Code", "Refactoring", "Head First C#");
 				Console.WriteLine();
-				#endregion
-			}
+			#endregion
 
-			// --- Helper Methods ---
+				#region Helper Methods
 
-			// Method for Problem 3
-			static void PrintWelcomeMessage()
-			{
-				Console.WriteLine("Welcome to the Library!");
-			}
+					// Method for Problem 3
+					static void PrintWelcomeMessage()
+					{
+						Console.WriteLine("Welcome to the Library!");
+					}
 
-			// Method for Problem 4
-			static void PrintBookTitle(string title)
-			{
-				Console.WriteLine("Book title: " + title);
-			}
+					// Method for Problem 4
+					static void PrintBookTitle(string title)
+					{
+						Console.WriteLine("Book title: " + title);
+					}
 
-			// Method for Problem 5
-			static void AddBonusPages(int pages)
-			{
-				pages = pages + 50;
-			}
+					// Method for Problem 5
+					static void AddBonusPages(int pages)
+					{
+						pages = pages + 50;
+					}
 
-			// Method for Problem 6
-			static void ApplyDiscount(double[] prices)
-			{
-				prices[0] = prices[0] - 5;
-			}
+					// Method for Problem 6
+					static void ApplyDiscount(double[] prices)
+					{
+						prices[0] = prices[0] - 5;
+					}
 
-			// Method for Problem 7
-			static void AddBonusPagesByRef(ref int pages)
-			{
-				pages = pages + 50;
-			}
+					// Method for Problem 7
+					static void AddBonusPagesByRef(ref int pages)
+					{
+						pages = pages + 50;
+					}
 
-			// Method for Problem 8
-			static void ReplaceArray(ref double[] prices)
-			{
-				prices = new double[] { 10.0, 12.5, 15.0 };
-			}
+					// Method for Problem 8
+					static void ReplaceArray(ref double[] prices)
+					{
+						prices = new double[] { 10.0, 12.5, 15.0 };
+					}
 
-			// Method for Problem 9
-			static bool TryGetPrice(string title, out double price)
-			{
-				if (title == "Clean Code")
-				{
-					price = 25.5;
-					return true;
-				}
-				else
-				{
-					price = 0;
-					return false;
-				}
-			}
+					// Method for Problem 9
+					static bool TryGetPrice(string title, out double price)
+					{
+						if (title == "Clean Code")
+						{
+							price = 25.5;
+							return true;
+						}
+						else
+						{
+							price = 0;
+							return false;
+						}
+					}
 
-			// Method for Problem 10 & 11
-			static void PrintBookInfo(string title, int pages = 300)
-			{
-				Console.WriteLine($"Title: {title}, Pages: {pages}");
-			}
+					// Method for Problem 10 & 11
+					static void PrintBookInfo(string title, int pages = 300)
+					{
+						Console.WriteLine($"Title: {title}, Pages: {pages}");
+					}
 
-			// Method for Problem 12
-			static void PrintAllTitles(params string[] titles)
-			{
-				foreach (string title in titles)
-				{
-					Console.WriteLine(title);
-				}
-			}
+					// Method for Problem 12
+					static void PrintAllTitles(params string[] titles)
+					{
+						foreach (string title in titles)
+						{
+							Console.WriteLine(title);
+						}
+					}
+
+			#endregion
+			#endregion
 		}
-	}
-
-
-
-
-
-	#endregion
-}
 	}
 }
